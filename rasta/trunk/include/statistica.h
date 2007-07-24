@@ -20,7 +20,7 @@ RASTA - Radio Aware Spanning Tree Autoconfiguration
 #ifndef STATISTICA_H
 #define STATISTICA_H
 
-
+#include <syslog.h>
 
 void *statistica(void *);
 

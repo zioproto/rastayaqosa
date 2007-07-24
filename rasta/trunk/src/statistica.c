@@ -397,7 +397,14 @@ if (wds_flag)
 	
 	//Metto in MACTEMP il MAC sorgente del pacchetto arrivato
     memset(MACTEMP,0,7);
+    MACTEMP[7]='\0';
     memcpy(MACTEMP,hdr->MAC2,6);
+    
+	
+	//Write statistics to syslogd
+	openlog("RASTA", LOG_WARNING || LOG_PID, LOG_DAEMON);
+	syslog(LOG_WARNING,"RSSI: %d\t MAC:%s\n",hdr->RSSI.value,MACTEMP);
+	closelog();
 	
 	if (primo->next==NULL)//se non esiste un secondo
 			{ 

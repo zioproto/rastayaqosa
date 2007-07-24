@@ -99,7 +99,7 @@ if (readconf() == -1) printf("Errore parsing configuration\n");
 
 //sarebbe opportuno inserire qui un check sulla consistenza del file di configurazione, vedi idioti che selezionano BROADCOM e ATHEROS insieme.
 
-if (DEBUG) printf("ESSID configurato %s\n",myESSID);
+if (DEBUG) printf("ESSID configured %s\n",myESSID);
 
 
 //Metto l'ap in monitor mode (broadcom && OpenWRT combo)
